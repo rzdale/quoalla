@@ -1,5 +1,12 @@
 var map;
 var pos;
+var shelter;
+var food;
+var wifi;
+var charging;
+var restroom;
+var health
+
 function initMap() {
 	console.log("callback hit!")
   // Constructor creates a new map - only center and zoom are required.
@@ -57,7 +64,34 @@ function initMap() {
 
   $("#new-marker").on('submit', function(e) {
     e.preventDefault();
-    var $form = $(this)
+    var $form = $(this);
+    var image;
+    var spotType = $('#spot_type').val();
+    console.log(spotType);
+    switch (spotType) {
+      case "shelter":
+        image = "http://jellyfishpi.com/images/shelterPin.png";
+        break;
+      case "food":
+        image = "http://jellyfishpi.com/images/foodPin.png";
+        break;
+      case "restroom":
+        image = "http://jellyfishpi.com/images/shelterPin.png";
+        break;
+      case "shelter":
+        image = "http://jellyfishpi.com/images/wifiPin.png";
+        break;
+      case "shelter":
+        image = "http://jellyfishpi.com/images/chargingPin.png";
+        break;
+      case "":
+        image = "http://jellyfishpi.com/images/healthPin.png";
+        break;
+    
+      default:
+        image = "http://jellyfishpi.com/images/shelterPin.png";
+        break;
+    }
     console.log("form clicked");
     console.log($('#title').val());
     var marker = new google.maps.Marker({
@@ -65,17 +99,9 @@ function initMap() {
       map: map,
       draggable: true,
       title: $('#title').val(),
-      icon: "http://jellyfishpi.com/images/restroomPin.png"
+      icon: image
     });
   });
 }
-
-
-
-
-
-
-
-// Try HTML5 geolocation.
 
 
