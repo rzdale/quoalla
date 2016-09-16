@@ -1,0 +1,52 @@
+
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #F16429;
+  color: #FFF;
+}
+
+.header li>a {
+  margin: 15px;
+  color: #FFF;
+}
+
+.navbar-nav li>a:hover {
+  background-color: transparent;
+}
+
+.dropdown-menu li>a {
+  color:  #F16429;
+}
+
+.logo {
+    display: inline-block;
+    margin: 10px 15px;
+    width: 65px;
+    height: 65px;
+    background: url(/assets/logo.png);
+    background-size: 100% 100%;
+}
+
+.brand {
+    display: inline-block;
+    font-size: 1.7em;
+    margin: 0 15px;
+    vertical-align: top;
+    font-family: 'Muli', sans-serif;
+}
