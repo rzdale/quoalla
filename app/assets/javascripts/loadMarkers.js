@@ -31,7 +31,7 @@ function loadMarkers(){
         case "charging":
           image = "http://jellyfishpi.com/images/chargingPin.png";
           break;
-        case "":
+        case "health":
           image = "http://jellyfishpi.com/images/healthPin.png";
           break;
         default:
