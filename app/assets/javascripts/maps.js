@@ -1,4 +1,5 @@
 var map;
+var pos;
 function initMap() {
 	console.log("callback hit!")
   // Constructor creates a new map - only center and zoom are required.
@@ -15,35 +16,62 @@ function initMap() {
 //   title: 'Home!'
 // });
 
-var infoWindow = new google.maps.InfoWindow({
-    content: "Hey!"
+  var infoWindow = new google.maps.InfoWindow({
+      content: "Hey!"
+    });
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+  }
+
+  // google.maps.event.addListener(map, 'click', function( event ) {
+  //   // alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
+  //   var marker = new google.maps.Marker({
+  //     position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
+  //     map: map,
+  //     draggable: true,
+  //     title: 'This is a marker!'
+  //   });
+
+  // });
+
+  $("#new-marker").on('submit', function(e) {
+    e.preventDefault();
+    var $form = $(this)
+    console.log("form clicked");
+    console.log($('#title').val());
+    var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      draggable: true,
+      title: $('#title').val(),
+      icon: "http://jellyfishpi.com/images/restroomPin.png"
+    });
   });
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var pos = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    };
-
-    infoWindow.setPosition(pos);
-    infoWindow.setContent('Location found.');
-    map.setCenter(pos);
-  }, function() {
-    handleLocationError(true, infoWindow, map.getCenter());
-  });
-} else {
-  // Browser doesn't support Geolocation
-  handleLocationError(false, infoWindow, map.getCenter());
-}
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-infoWindow.setPosition(pos);
-infoWindow.setContent(browserHasGeolocation ?
-                      'Error: The Geolocation service failed.' :
-                      'Error: Your browser doesn\'t support geolocation.');
-}
+
+
 
 
 

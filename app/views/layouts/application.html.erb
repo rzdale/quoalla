@@ -14,6 +14,25 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhBrTolcCb_-UvIB3JYYmzpCVFgh6N2Gg&v=3&callback=initMap">
   </script>
 
+  <form id="new-marker">
+  	<label>Title</label>
+  	<input id="title" type="text" name="title">
+
+  	<label>Type of Resource</label>
+  	<select id="spot_type" name="spot_type">
+  		<option value="shelter" selected>Shelter</option> 
+  		<option value="wifi">Wifi Hotspot</option>
+  		<option value="food">Food</option>
+  		<option value="restroom">Restroom</option>
+  		<option value="health">Health Services</option>
+  		<option value="charging">Charging Station</option>
+		</select>
+
+		<label>Comment</label>
+		<input id="comment" type="text" name="comment">
+		<input type="submit" name="add">
+  </form>
+
     <%= yield %>
   </body>
 </html>
