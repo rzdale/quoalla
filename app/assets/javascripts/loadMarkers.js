@@ -12,7 +12,7 @@ function loadMarkers(){
       url: "/spots",
       dataType: "json",
       success: function(response){
-        for (i = 0; i < response.length; i++) {
+        for (var i = 0; i < response.length; i++) {
 
         var home = {lat: parseFloat(response[i].latitude), lng: parseFloat(response[i].longitude)};
         var marker = new google.maps.Marker({
