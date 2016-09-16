@@ -1,0 +1,12 @@
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 960px;
+}
+
+#map {
+ 	height: 800px;
+ 	width: 80%;
+ 	left: 160px;
+}
