@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916181504) do
+ActiveRecord::Schema.define(version: 20160916193933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "spot_id"
-    t.string   "commenter_name", default: "anonymous"
+    t.string   "commenter_name"
     t.text     "content"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(version: 20160916181504) do
   create_table "spots", force: :cascade do |t|
     t.string   "name"
     t.string   "spot_type"
-    t.integer  "upvotes", default: 0
+    t.integer  "upvotes"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
   end
 
 end
