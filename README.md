@@ -1,24 +1,9 @@
-# README
+Quoalla is a simple mapping application designed to help the homeless, particularly LGBTQ youth.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app makes it easy for homeless youth to share information on shelters, wifi hotspots, charging stations, and other resources. Additionally, the data will be made readily available for use as an API.
 
-Things you may want to cover:
+[main view](https://github.com/robdevbot/quoalla/screenshots/main.png)
 
-* Ruby version
+[addding a new location](https://github.com/robdevbot/quoalla/screenshots/add.png)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[moving the marker](https://github.com/robdevbot/quoalla/screenshots/marker.png)
