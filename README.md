@@ -1,3 +1,5 @@
+#Quoalla
+
 Quoalla is a simple mapping application designed to help the homeless, particularly LGBTQ youth.
 
 This app makes it easy for homeless youth to share information on shelters, wifi hotspots, charging stations, and other resources. Additionally, the data will be made readily available for use as an API.
